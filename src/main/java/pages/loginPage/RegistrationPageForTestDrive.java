@@ -1,4 +1,4 @@
-package pages.modalPages;
+package pages.loginPage;
 
-public class registrationPageForTestDrive {
+public class RegistrationPageForTestDrive {
 }

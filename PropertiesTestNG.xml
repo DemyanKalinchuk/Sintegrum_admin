@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<properties/>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite1" parallel="tests" thread-count="2" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="utils.RetryListener"/>
+    </listeners>
+
+    <test name="Smoke">
+        <packages>
+            <package name="homePage"/>
+            <package name="registrationPage"/>
+        </packages>
+    </test>
+
+</suite>
