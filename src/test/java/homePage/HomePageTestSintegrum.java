@@ -15,8 +15,7 @@ public class HomePageTestSintegrum extends BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void goToProfilePage() {
-
-        logPreconditionStep(1, "Open 'Login' page");
+        logPreconditionStep(1, "Open 'Home' page");
         configure();
     }
 

@@ -7,6 +7,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeSuite;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
@@ -15,9 +16,14 @@ import static utils.Constants.BASE_URL;
 public abstract class BaseTest extends Base {
 
 
-    public void configure() {
+    @BeforeSuite(alwaysRun = true)
+    public void setUpDriver() {
         SelenideLogger.addListener(testProperties.selenideListener(), new AllureSelenide().screenshots(true).savePageSource(false));
         WebDriverManager.chromedriver().driverVersion(testProperties.chromeDriverVersion()).setup();
+    }
+
+    public void configure() {
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions options = new ChromeOptions();
 

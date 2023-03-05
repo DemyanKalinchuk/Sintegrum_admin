@@ -9,7 +9,7 @@
     <test name="Smoke">
         <packages>
             <package name="homePage"/>
-            <package name="registrationPage"/>
+            <package name="loginPage"/>
         </packages>
     </test>
 
