@@ -6,10 +6,9 @@ import org.testng.annotations.Test;
 import steps.loginPage.LoginPageSteps;
 import utils.BaseTest;
 
-import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static core.TestStepLogger.logPreconditionStep;
-import static utils.Constants.LOGIN_PAGE_URL;
+import static core.TestStepLogger.logStep;
 
 public class LoginPageTest extends BaseTest {
 
@@ -18,16 +17,29 @@ public class LoginPageTest extends BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void goToLoginPage() {
         logPreconditionStep(1, "Open 'Login' page");
-        open(LOGIN_PAGE_URL);
-        sleep(3000);
+        configureForProfilePage();
+        sleep(1000);
+    }
+
+    @Test(enabled = false)
+    @Description("Open login page and switch language to English")
+    public void switchLanguageToEnglish() {
+    loginPageSteps.switchLanguageToEnglish();
+
     }
 
     @Test
     @Description("Open login page and input valid cred")
     public void loginWithValidCred() {
+        logStep(1, "Enter valid credential ");
+        loginPageSteps.enterValidCred();
+    }
 
-        loginPageSteps.inputValidCred();
-
+    @Test
+    @Description("Open login page and input invalid cred")
+    public void loginWithInvalidCred() {
+        logStep(1, "Enter invalid credential ");
+        loginPageSteps.enterInvalidCred();
     }
 
 }

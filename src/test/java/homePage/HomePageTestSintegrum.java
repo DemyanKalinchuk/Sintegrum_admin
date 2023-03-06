@@ -6,8 +6,10 @@ import org.testng.annotations.Test;
 import steps.homePage.HomePageSteps;
 import utils.BaseTest;
 
+import static com.codeborne.selenide.Selenide.open;
 import static core.TestStepLogger.logPreconditionStep;
 import static core.TestStepLogger.logStep;
+import static utils.Constants.BASE_URL;
 
 public class HomePageTestSintegrum extends BaseTest {
 
@@ -16,7 +18,8 @@ public class HomePageTestSintegrum extends BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void goToProfilePage() {
         logPreconditionStep(1, "Open 'Home' page");
-        configure();
+        configureForHomePage();
+
     }
 
     @Test

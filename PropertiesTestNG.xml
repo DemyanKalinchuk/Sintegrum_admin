@@ -10,6 +10,7 @@
         <packages>
             <package name="homePage"/>
             <package name="loginPage"/>
+            <package name="profilePage"/>
         </packages>
     </test>
 

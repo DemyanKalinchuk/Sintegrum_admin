@@ -36,3 +36,11 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+.idea
+target
+build
+.allure
+src/main/java/Main.java
+/allure-results/
+debug.log
